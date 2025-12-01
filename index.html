@@ -29,42 +29,28 @@
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-container {
             max-width: 100%;
             padding: 0 60px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-
-        .nav-left {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .nav-title {
-            font-size: 20px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             list-style: none;
         }
 
         .nav-link {
             color: #888;
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             transition: color 0.3s ease;
             cursor: pointer;
@@ -75,19 +61,65 @@
             color: #ffffff;
         }
 
-        .logo {
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
-            padding: 8px 20px;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 14px;
+        /* Hero Section */
+        .hero-section {
+            padding: 140px 60px 60px;
+            text-align: center;
+            background: #000000;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-weight: 300;
+            letter-spacing: 20px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hero-subtitle {
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: transparent;
+            color: #888;
+            border: 1px solid #333;
+            border-radius: 25px;
+            font-size: 11px;
+            font-weight: 500;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            color: #ffffff;
+            border-color: #666;
+        }
+
+        .filter-btn.active {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
         }
 
         /* Main Content */
         .main-content {
-            margin-top: 80px;
-            padding: 40px 60px;
+            padding: 0 60px 40px;
         }
 
         .section {
@@ -97,6 +129,10 @@
 
         .section.active {
             display: block;
+        }
+
+        .works-section {
+            padding-top: 0;
         }
 
         /* Portfolio Grid */
@@ -241,37 +277,58 @@
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero-title {
+                font-size: 48px;
+                letter-spacing: 12px;
+            }
+
+            .filter-buttons {
+                flex-wrap: wrap;
+            }
         }
 
         @media (max-width: 768px) {
             .nav-container {
                 padding: 0 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-left {
-                flex-direction: column;
-                gap: 15px;
-                width: 100%;
             }
 
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
+                gap: 20px;
             }
 
             .nav-link {
-                font-size: 11px;
+                font-size: 10px;
+            }
+
+            .hero-section {
+                padding: 120px 20px 40px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+                letter-spacing: 8px;
+            }
+
+            .hero-subtitle {
+                font-size: 10px;
+                letter-spacing: 3px;
+                margin-bottom: 40px;
+            }
+
+            .filter-buttons {
+                gap: 10px;
+            }
+
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 10px;
             }
 
             .main-content {
-                padding: 20px;
-            }
-
-            .logo {
-                order: -1;
+                padding: 0 20px 20px;
             }
         }
     </style>
@@ -280,19 +337,32 @@
     <!-- Navigation -->
     <nav class="top-nav">
         <div class="nav-container">
-            <div class="nav-left">
-                <div class="nav-title">COMMERCIAL / FILM/DRAMA</div>
-                <ul class="nav-links">
-                    <li><a class="nav-link active" data-section="portfolio">WORKS</a></li>
-                    <li><a class="nav-link" data-section="about">ABOUT</a></li>
-                    <li><a class="nav-link" data-section="dcp">DCP MASTERING</a></li>
-                    <li><a class="nav-link" data-section="hdr">HDR MASTERING</a></li>
-                    <li><a class="nav-link" data-section="contact">CONTACT</a></li>
-                </ul>
-            </div>
-            <div class="logo">Feeldiz</div>
+            <ul class="nav-links">
+                <li><a class="nav-link" data-section="home">HOME</a></li>
+                <li><a class="nav-link active" data-section="portfolio">WORKS</a></li>
+                <li><a class="nav-link" data-section="facility">FACILITY</a></li>
+                <li><a class="nav-link" data-section="about">ABOUT</a></li>
+                <li><a class="nav-link" data-section="contact">CONTACT</a></li>
+            </ul>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">FEELDIZ DI STUDIO</h1>
+        <p class="hero-subtitle">FEEL OUR CONTRAST</p>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">ALL WORKS</button>
+            <button class="filter-btn" data-filter="drama">DRAMA</button>
+            <button class="filter-btn" data-filter="feature">FEATURE FILM</button>
+            <button class="filter-btn" data-filter="short">SHORT FILM</button>
+            <button class="filter-btn" data-filter="commercial">COMMERCIAL</button>
+            <button class="filter-btn" data-filter="mv">M/V</button>
+            <button class="filter-btn" data-filter="random">RANDOM 🎲</button>
+        </div>
+    </section>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -349,6 +419,43 @@
             </div>
         </section>
 
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="about-content">
+                <h2>WELCOME TO FEELDIZ DI STUDIO</h2>
+                <p>
+                    영상의 감정과 분위기를 결정하는 컬러 그레이딩을 통해
+                    <span class="highlight">창작자의 비전을 완성</span>합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Facility Section -->
+        <section id="facility" class="section">
+            <div class="about-content">
+                <h2>FACILITY</h2>
+                <p>
+                    <span class="highlight">Barco 4K DLP</span>를 보유하여
+                    극장과 동일한 시설을 제공합니다.
+                </p>
+                <p>
+                    <span class="highlight">Dolby Vision HDR</span> 인증 시설에서
+                    최상의 HDR 마스터링을 제공합니다.
+                </p>
+                <p>
+                    <span class="highlight">LG에서 제공받는 OLED 레퍼런스 모니터</span>로
+                    오차 없이 모든 매체 아웃풋이 가능합니다.
+                </p>
+                <p>
+                    극장 상영을 위한 DCP(Digital Cinema Package) 제작 및 마스터링 서비스를 제공합니다.
+                </p>
+                <p>
+                    HDR10, Dolby Vision, HLG 등 모든 HDR 포맷을 지원하며,
+                    Netflix, Disney+, Apple TV+ 등 OTT 플랫폼 규격에 맞춘 마스터링이 가능합니다.
+                </p>
+            </div>
+        </section>
+
         <!-- About Section -->
         <section id="about" class="section">
             <div class="about-content">
@@ -373,42 +480,6 @@
                 <p>
                     <span class="highlight">국제컬러리스트협회 소속</span> 컬러리스트가
                     책임지고 최상의 결과물을 만들어 내드립니다.
-                </p>
-            </div>
-        </section>
-
-        <!-- DCP Mastering Section -->
-        <section id="dcp" class="section">
-            <div class="about-content">
-                <h2>DCP MASTERING</h2>
-                <p>
-                    <span class="highlight">Barco 4K DLP</span>를 보유하여
-                    극장과 동일한 시설을 제공합니다.
-                </p>
-                <p>
-                    극장 상영을 위한 DCP(Digital Cinema Package) 제작 및 마스터링 서비스를 제공합니다.
-                </p>
-                <p>
-                    2K, 4K 해상도를 지원하며 모든 국제 영화제 및 극장 상영 규격에 맞춰 제작합니다.
-                </p>
-            </div>
-        </section>
-
-        <!-- HDR Mastering Section -->
-        <section id="hdr" class="section">
-            <div class="about-content">
-                <h2>HDR MASTERING</h2>
-                <p>
-                    <span class="highlight">Dolby Vision HDR</span> 인증 시설에서
-                    최상의 HDR 마스터링을 제공합니다.
-                </p>
-                <p>
-                    <span class="highlight">LG에서 제공받는 OLED 레퍼런스 모니터</span>로
-                    오차 없이 모든 매체 아웃풋이 가능합니다.
-                </p>
-                <p>
-                    HDR10, Dolby Vision, HLG 등 모든 HDR 포맷을 지원하며,
-                    Netflix, Disney+, Apple TV+ 등 OTT 플랫폼 규격에 맞춘 마스터링이 가능합니다.
                 </p>
             </div>
         </section>
@@ -446,6 +517,7 @@
         // Navigation functionality
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.section');
+        const heroSection = document.querySelector('.hero-section');
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -462,6 +534,45 @@
                         section.classList.add('active');
                     }
                 });
+
+                // Show/hide hero section based on active section
+                if (sectionId === 'portfolio') {
+                    heroSection.style.display = 'block';
+                } else {
+                    heroSection.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active filter button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                // Filter portfolio items (basic implementation)
+                if (filter === 'all') {
+                    portfolioItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                } else if (filter === 'random') {
+                    // Shuffle items
+                    const grid = document.querySelector('.portfolio-grid');
+                    const items = Array.from(portfolioItems);
+                    items.sort(() => Math.random() - 0.5);
+                    items.forEach(item => grid.appendChild(item));
+                } else {
+                    // For now, show all items (you can implement category filtering later)
+                    portfolioItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                }
             });
         });
     </script>
